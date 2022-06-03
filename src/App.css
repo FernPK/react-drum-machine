@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#pad {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(3, 90px);
+  grid-gap: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.drum-pad {
+  background-color: rgb(53, 53, 53);
+  border-radius: 4px;
+  border: none;
+  color: rgb(255, 225, 0);
+  box-shadow: -1px 3px 5px black;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-image: url('https://cdn.discordapp.com/attachments/799558368657801239/982315636703264798/background.jpg');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#drum-machine {
+  background-image: url('https://cdn.discordapp.com/attachments/799558368657801239/982315636204113980/blackLeather.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  margin: auto;
+  width: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px;
+}
+
+#setting {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: 20px;
+}
+
+.outer-switch {
+  width: 40px;
+  height: 20px;
+  background-color: black;
+  padding: 2px;
+  margin-top: 5px;
+}
+
+.switch {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 225, 0);
+}
+
+#power {
+  float: right;
+}
+
+#bank {
+  float: left;
+}
+
+#display {
+  padding: 10px;
+  height: 30px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  box-shadow: inset 0 0 5px black;
+}
+
+.switch-wrapper {
+  text-align: center;
+  color: rgb(255, 225, 0);
+}
+
+.credit {
+  position: absolute;
+  font-size: 12px;
   color: white;
+  width: fit-content;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
-.App-link {
-  color: #61dafb;
+#credit1 {
+  bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a {
+  color: rgb(227, 227, 227);
+}
+
+#credit2 {
+  bottom: 20px;
+}
+
+@media (max-width: 500px) {
+  #pad {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    grid-gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  #drum-machine{
+    flex-direction: column;
+  }
+  #setting{
+    margin: 20px 0px 10px 0px;
+  }
+  .switch-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .outer-switch{
+    margin-left: 10px;
+  }
+  #display{
+    margin: 15px;
+  }
+  .drum-pad{
+    box-shadow: -2px 2px 5px black;
+  }
+  .credit {
+    font-size: 10px;
   }
 }
