@@ -91,7 +91,7 @@ body {
 }
 
 .credit {
-  position: absolute;
+  position: fixed;
   font-size: 12px;
   color: white;
   width: fit-content;
