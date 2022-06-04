@@ -63,15 +63,20 @@ class Drum extends React.Component {
     //document.addEventListener('keydown', this.handleKeyPress);
     //$(body).on('keydown', this.handleKeyPress);
     $('body').keydown(this.handleKeyPress);
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const context = new AudioContext();
+    const buffer = context.createBuffer(1, 1,22050);
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    source.connect(context.destination);
+    source.start();
   }
   componentWillUnmount() {
     //document.removeEventListener('keydown', this.handleKeyPress);
-    $('body').off('keydown', this.handleKeyPress)
+    $('body').off('keydown', this.handleKeyPress);
   }
   play(item) {
-    console.log(item.id[this.state.bank]);
     const audio = $('#'+item.key)[0];
-    console.log(item.key);
     audio.currentTime = 0;
     audio.play();
     $('#display').text(item.id[this.state.bank]);
