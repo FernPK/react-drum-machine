@@ -62,7 +62,7 @@ class Drum extends React.Component {
   componentDidMount() {
     //document.addEventListener('keydown', this.handleKeyPress);
     //$(body).on('keydown', this.handleKeyPress);
-    $('body').keydown(this.handleKeyPress);
+    $('body').on('keydown ', this.handleKeyPress);
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const context = new AudioContext();
     const buffer = context.createBuffer(1, 1,22050);
@@ -85,7 +85,7 @@ class Drum extends React.Component {
     for(let i=0; i<buttonInfo.length; i++){
       if (event.key.toUpperCase() === buttonInfo[i].key){
         //document.getElementById(buttonInfo[i].id).click();
-        $('#'+buttonInfo[i].id[this.state.bank]).click();
+        $('#'+buttonInfo[i].id[this.state.bank]).trigger('click');
       }
     }
   }
